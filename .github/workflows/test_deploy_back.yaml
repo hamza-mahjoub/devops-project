@@ -1,5 +1,8 @@
 name: Test then deploy backend Workflow
-on: [push]
+on:
+  push:
+    paths:
+      - 'tv-show-backend/**'
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -12,12 +15,9 @@ jobs:
       - name: backend-project-command
         run: |
           cd ./tv-show-backend
+          npm install
           npm run lint
           ls -l
-      # - uses: stefanoeb/eslint-action@1.0.2
-      #   with:
-      #     files: ./src/
-
   Test:
     runs-on: ubuntu-latest
     steps:
