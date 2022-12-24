@@ -7,12 +7,15 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v1
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: command
+        run: |
+          ls -l
       # - uses: stefanoeb/eslint-action@1.0.2
       #   with:
       #     files: src/
-        run: |
-          ls -l
+
   Test:
     runs-on: ubuntu-latest
     steps:
