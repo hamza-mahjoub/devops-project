@@ -1,0 +1,14 @@
+apiVersion: v1
+name: tv-show-backend-service
+description: the api for managing tv shows and movies
+type: application
+keywords:
+  - tv shows
+  - movies
+sources:
+  - https://github.com/hamza-mahjoub/devops-project
+maintainers: # (optional)
+  - name: hamza majoub
+    email: hamza.mahjoub@insat.ucar.tn
+    url: https://github.com/hamza-mahjoub
+version: 1.0.0

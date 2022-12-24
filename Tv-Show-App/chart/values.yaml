@@ -1,0 +1,21 @@
+deployment:
+  name: tv-show-frontend-deployment
+  namespace: front-office-ns
+  label: tv-show-frontend
+  replicas: 3
+service:
+  name: tv-show-frontend-service
+image:
+  name: tv-show-frontend
+  tag: latest
+http:
+  name: frontend-port
+  port: 3001
+  loadBalancerIp: 192.0.2.127
+dnsutils:
+  sleepTimeout: 3600
+ingress:
+  ip: 20.74.102.125
+env:
+  backendUrl: 20.103.30.206
+  backendPort: 8080

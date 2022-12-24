@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.image.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-resource-group: discovery_app_group
+    service.beta.kubernetes.io/azure-load-balancer-public-ip-name: {{ .Values.ingress.ip }}
+
+spec:
+  # 
+  rules:
+  
+  - host: discovery.app
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Values.service.name }}
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

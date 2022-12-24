@@ -1,0 +1,14 @@
+deployment:
+  name: tv-show-backend-deployment
+  namespace: back-office-ns
+  label: tv-show-backend
+  replicas: 3
+service:
+  name: tv-show-backend-service
+image:
+  name: tv-show-backend
+  tag: latest
+http:
+  name: backend-port
+  port: 3000
+  

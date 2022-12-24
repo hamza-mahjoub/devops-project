@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  labels:
+    app: {{ .Values.deployment.label }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.label }}
+    spec:
+      containers:
+      - name: {{ .Values.image.name }}
+        image: hamzamahjoub/tvshowappfront:{{ .Values.image.tag }}
+        ports:
+        - containerPort: {{ .Values.http.port }}
+          name: {{ .Values.http.name }}
+        env:
+        - name: REACT_APP_BACKEND_URL
+          value: "{{ .Values.env.backendUrl }}"
+        - name: REACT_APP_BACKEND_PORT
+          value: "{{ .Values.env.backendPort }}"
+
