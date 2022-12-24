@@ -6,28 +6,32 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
       - name: backend-project-command
         run: |
           cd ./tv-show-backend
+          npm run lint
           ls -l
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: ./src/
+      # - uses: stefanoeb/eslint-action@1.0.2
+      #   with:
+      #     files: ./src/
 
   Test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: backend-project-command
-        run:  cd ./tv-show-backend
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
+      - name: backend-project-commands
       - run: |
+          cd ./tv-show-backend
           ls -l
           npm install
-      - run: npm test
+          npm test
   # Package:
   #   runs-on: ubuntu-latest
   #   needs:
