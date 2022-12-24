@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: "16"
       - name: backend-project-commands
-      - run: |
+        run: |
           cd ./tv-show-backend
           ls -l
           npm install
