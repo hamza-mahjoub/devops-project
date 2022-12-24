@@ -11,11 +11,11 @@ jobs:
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
+        run: |
+          ls -l
   Test:
     runs-on: ubuntu-latest
     steps:
-        run: |
-          ls -l
       - name: Check out repository code
         uses: actions/checkout@v3
       - uses: actions/setup-node@v3
