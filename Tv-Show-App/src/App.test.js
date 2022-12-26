@@ -12,5 +12,5 @@ test('renders learn react link', () => {
   );
 
   // eslint-disable-next-line testing-library/prefer-screen-queries
-  expect(getByText(/DISCOVERY APP/i)).toBeInTheDocument();
+  expect(getByText(/DISCOVERY APP/)).toBeInTheDocument();
 });
