@@ -15,4 +15,4 @@ ENV NODE_ENV production
 
 EXPOSE 3001
 # Start the app
-CMD [ "npm", "run", "start:linux" ]
+CMD [ "npm", "run", "start" ]

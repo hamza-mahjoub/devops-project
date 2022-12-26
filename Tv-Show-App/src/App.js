@@ -8,7 +8,7 @@ import { MovieDetailsPage } from "./app/components/show-details/MoviesDetailsPag
 import { TvDetailsPage } from "./app/components/show-details/TvDetailsPage";
 import { NotFoundComponent } from "./app/components/shared/NotFoundComponent";
 
-import "./App.css"; 
+import "./App.css";
 
 function App() {
   return (
