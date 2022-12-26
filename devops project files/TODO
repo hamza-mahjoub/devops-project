@@ -42,6 +42,7 @@ Project Context:
     Project Tasks List: 
         Devops:
             Prometheus for metrics with grafana board:
+                ✔ Don't Forget Prometheus helm @done(22-12-26 01:34) @critical
                 General purpose metrics:
                     ☐ Mem, cpu (node exporter)
                     Prcessed requests:
@@ -73,16 +74,19 @@ Project Context:
             ✔ Automated initialization for workloads @done(22-12-22 23:11)
             ☐ Multi-environment setup (Or at least the project should be capable of supporting extra environments)
             ✔ Well isolated and maintainable infrastructure layers (Microstacks) @done(22-12-23 16:28)
-            ☐ Automated Deployment
+            CI/CD:
+                ✔ Test/eslint @done(22-12-24 22:51)
+                ✔ Package @done(22-12-24 22:51)
+                ☐ Automated Deployment
         Deployment:
             -Usage of Microservices:
-                ☐ Use all good practices of tracking workloads health
+                ✔ Use all good practices of tracking workloads health @done(22-12-26 01:32)
                 ☐ restoring them when needed
             -Adequate choice of deployment strategy (+ explanation):
                 ☐ deployment strategy
                 ☐ explanation
                 ☐ Note: Recreate and Rolling updates are not accepted
-            ☐ Use of required configurations and secrets (treat those secrets carefully)
+            ✔ Use of required configurations and secrets (treat those secrets carefully) @done(22-12-24 22:51)
             ☐ Use an adequate network architecture and a well-defined set of network policies (ingress)
             ✔ Have at least one endpoint exposed to the public (loadbalancer) @done(22-12-23 16:28)
     Stuff done but not planned:
@@ -90,5 +94,7 @@ Project Context:
     what can be added: 
         ☐ Ingress /auth => auth and /show => backend watch video 2
     Architecture:
+        ☐ add services icons/description
         ☐ update namespaces
         ☐ update public ip address
+        ☐ update CI/CD
