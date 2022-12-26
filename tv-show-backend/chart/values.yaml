@@ -10,5 +10,4 @@ image:
   tag: latest
 http:
   name: backend-port
-  port: 3000
-  
+  port: 3001

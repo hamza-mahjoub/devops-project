@@ -44,7 +44,7 @@ Project Context:
             Prometheus for metrics with grafana board:
                 ✔ Don't Forget Prometheus helm @done(22-12-26 01:34) @critical
                 General purpose metrics:
-                    ☐ Mem, cpu (node exporter)
+                    ✔ Mem, cpu (node exporter) @done(22-12-26 18:47) @critical
                     Prcessed requests:
                         ✔ Total number of requests. @done(22-12-20 14:46)
                         ✔ Label the metric in a way that allows you to get the success ratio (% of successful requests). @done(22-12-20 14:46)
@@ -58,7 +58,7 @@ Project Context:
             trace:
                 ☐ generate tracing
                 ☐ trace should have request id and client_ip
-                ☐ ArgoCd
+                ✔ ArgoCd @done(22-12-26 18:46) @critical
             helm:
                 ✔ service helm chart @done(22-12-21 13:00)
                 values.yaml:
@@ -95,6 +95,8 @@ Project Context:
         ☐ Ingress /auth => auth and /show => backend watch video 2
     Architecture:
         ☐ add services icons/description
+        ☐ add prometheus/argocd/grafana descritptions
+        ☐ add zipkin
         ☐ update namespaces
         ☐ update public ip address
         ☐ update CI/CD

@@ -25,4 +25,13 @@ spec:
           ports:
             - containerPort: {{ .Values.http.port }}
               name: {{ .Values.http.name }}
-        
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.http.port }}
+            failureThreshold: 1
+            periodSeconds: 10
+          startupProbe:
+            tcpSocket:
+              port: {{ .Values.http.port }}
+            failureThreshold: 10
+            periodSeconds: 5

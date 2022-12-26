@@ -1,0 +1,11 @@
+project: default
+source:
+  repoURL: 'https://github.com/hamza-mahjoub/devops-project.git'
+  path: {{ .Values.deployment.label }}chart
+  targetRevision: main
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: {{ .Values.deployment.namespace }}

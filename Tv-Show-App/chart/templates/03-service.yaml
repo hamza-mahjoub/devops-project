@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   namespace: {{ .Values.deployment.namespace }}
+  #annotations:
+    #service.beta.kubernetes.io/azure-load-balancer-additional-cors-headers: "Access-Control-Allow-Origin,Access-Control-Allow-Headers"
 spec:
   type: LoadBalancer
   selector:
@@ -12,7 +14,6 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: {{ .Values.http.name }}
-      nodePort: 30007
 status:
   loadBalancer:
     ingress:

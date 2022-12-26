@@ -26,4 +26,14 @@ spec:
           value: "{{ .Values.env.backendUrl }}"
         - name: REACT_APP_BACKEND_PORT
           value: "{{ .Values.env.backendPort }}"
+        livenessProbe:
+          tcpSocket:
+            port: {{ .Values.http.port }}
+          failureThreshold: 2
+          periodSeconds: 10
+        startupProbe:
+          tcpSocket:
+            port: {{ .Values.http.port }}
+          failureThreshold: 10
+          periodSeconds: 5
 

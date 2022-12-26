@@ -12,3 +12,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: {{ .Values.http.name }}
+status:
+  loadBalancer:
+    ingress:
+    - ip: {{ .Values.http.loadBalancerIp }}
