@@ -58,3 +58,14 @@ jobs:
           file: tv-show-backend/dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappbackend:latest
+  # deploy:
+  #     name: Deploy
+  #     needs: [ test, package ]
+  #     runs-on: ubuntu-latest
+  #     steps:
+  #       - name: Set the Kubernetes context
+  #         uses: azure/k8s-set-context@v2
+  #         with:
+  #           method: service-account
+  #           k8s-url: https://devops-project-k8s-14b8a194.hcp.westeurope.azmk8s.io:443hamza@hamza-VirtualBox
+  #           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}

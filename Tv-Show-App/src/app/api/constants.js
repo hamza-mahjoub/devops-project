@@ -1,4 +1,4 @@
-export const BASE_URL =`http://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/`;
+export const BASE_URL = `http://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/`;
 
 export const REQUEST_STATUS = {
   idle: "idle",
@@ -20,4 +20,8 @@ export const movieAPI = {
   FIND_ALL_BY_CONTENT: "/movies/search",
   FIND_BY_ID: (movieId) => `/movies/${movieId}`,
   FETCH_MOVIE_REVIEWS: (movieId) => `/movies/${movieId}/reviews`,
+};
+
+export const authAPI = {
+  CHECK_SERVER: "/",
 };

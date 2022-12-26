@@ -81,7 +81,7 @@ Project Context:
         Deployment:
             -Usage of Microservices:
                 ✔ Use all good practices of tracking workloads health @done(22-12-26 01:32)
-                ☐ restoring them when needed
+                ✔ restoring them when needed @done(22-12-26 12:46)
             -Adequate choice of deployment strategy (+ explanation):
                 ☐ deployment strategy
                 ☐ explanation

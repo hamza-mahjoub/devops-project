@@ -9,6 +9,7 @@ import { TvDetailsPage } from "./app/components/show-details/TvDetailsPage";
 import { NotFoundComponent } from "./app/components/shared/NotFoundComponent";
 
 import "./App.css";
+import { HomePage } from "./app/components/home-page/HomePage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/search-page/movies" element={<MovieSearchPage />} />
           <Route path="/movie/:id" element={<MovieDetailsPage />} />
           <Route path="/tv-show/:id" exact={true} element={<TvDetailsPage />} />
+          <Route path="/" exact={true} element={<HomePage />} />
           <Route path="*" exact={true} element={<NotFoundComponent />} />
         </Routes>
       </div>
