@@ -15,9 +15,6 @@ export class RequestInterceptor implements NestInterceptor {
 
     const request = context.switchToHttp().getRequest();
 
-    if (!request.headers['Access-Control-Allow-Origin']) {
-      request.headers["Access-Control-Allow-Origin"] = "*"
-    }
     if (!request.headers['X-Request-ID']) {
       request.headers["X-Request-ID"] = randomUUID()
     }

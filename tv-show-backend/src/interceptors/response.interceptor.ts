@@ -20,8 +20,7 @@ export class ResponseInterceptor implements NestInterceptor {
 
     const response = context.switchToHttp().getResponse();
     response.set({ 'X-Request-ID': request.headers['X-Request-ID'] })
-    response.set({ "crossorigin": true })
-    
+
     return next
       .handle()
       .pipe(
