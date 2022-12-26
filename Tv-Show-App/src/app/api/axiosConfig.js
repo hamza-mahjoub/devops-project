@@ -14,10 +14,12 @@ import { BASE_URL } from "./constants";
 
 export const axiosPublic = axios.create({
   baseURL: BASE_URL,
+  withCredentials: false,
 });
 
 export const axiosPrivate = axios.create({
   baseURL: BASE_URL,
+  withCredentials: false,
 });
 
 // axiosPrivate.interceptors.request.use(
