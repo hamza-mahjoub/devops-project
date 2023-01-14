@@ -4,15 +4,10 @@ metadata:
   name: {{ .Values.service.name }}
   namespace: {{ .Values.deployment.namespace }}
 spec:
-  type: LoadBalancer
   selector:
     app: {{ .Values.deployment.label }}
   ports:
     - name: {{ .Values.http.name }}-service
       protocol: TCP
-      port: 8080
+      port: 80
       targetPort: {{ .Values.http.name }}
-status:
-  loadBalancer:
-    ingress:
-    - ip: {{ .Values.http.loadBalancerIp }}

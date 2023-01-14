@@ -33,7 +33,7 @@ import { LoaderComponent } from "../shared/LoaderComponent";
 
 export const TvDetailsPage = () => {
   // Season id
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   //table config
   const [page, setPage] = React.useState(0);
@@ -145,7 +145,7 @@ export const TvDetailsPage = () => {
                 <Tab
                   key={season.id}
                   label={season.name}
-                  value={season.number}
+                  value={season.season_number}
                 />
               ))
             ) : (

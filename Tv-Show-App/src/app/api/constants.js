@@ -8,20 +8,20 @@ export const REQUEST_STATUS = {
 };
 
 export const tvAPI = {
-  FIND_ALL_BY_TYPE: "/tv",
-  FIND_ALL_BY_CONTENT: "/tv/search",
-  FIND_BY_ID: (tvId) => `/tv/${tvId}`,
+  FIND_ALL_BY_TYPE: "/shows/tv",
+  FIND_ALL_BY_CONTENT: "/shows/tv/search",
+  FIND_BY_ID: (tvId) => `/shows/tv/${tvId}`,
   FETCH_EPISODES_BY_SEASON: (tvId, seasonNumber) =>
-    `/tv/${tvId}/season/${seasonNumber}`,
+    `/shows/tv/${tvId}/season/${seasonNumber}`,
 };
 
 export const movieAPI = {
-  FIND_ALL_BY_TYPE: "/movies",
-  FIND_ALL_BY_CONTENT: "/movies/search",
-  FIND_BY_ID: (movieId) => `/movies/${movieId}`,
-  FETCH_MOVIE_REVIEWS: (movieId) => `/movies/${movieId}/reviews`,
+  FIND_ALL_BY_TYPE: "/shows/movies",
+  FIND_ALL_BY_CONTENT: "/shows/movies/search",
+  FIND_BY_ID: (movieId) => `/shows/movies/${movieId}`,
+  FETCH_MOVIE_REVIEWS: (movieId) => `/shows/movies/${movieId}/reviews`,
 };
 
 export const authAPI = {
-  CHECK_SERVER: "/",
+  CHECK_SERVER: "/auth",
 };

@@ -1,12 +1,12 @@
 deployment:
-  name: tv-show-backend-deployment
+  name: shows-backend-deployment
   namespace: back-office-ns
-  label: tv-show-backend
+  label: shows-backend
   replicas: 3
 service:
-  name: tv-show-backend-service
+  name: shows-backend-service
 image:
-  name: tv-show-backend
+  name: shows-backend
   tag: latest
 http:
   name: backend-port

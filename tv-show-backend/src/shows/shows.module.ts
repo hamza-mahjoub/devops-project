@@ -30,12 +30,12 @@ import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
     TvService,
     makeCounterProvider({
       name: "tv_metric",
-      help: "Counts the most frequest tv shows type searched",
+      help: "Counts the most frequent tv shows type searched",
       labelNames: ["type"]
     }),
     makeCounterProvider({
       name: "movies_metric",
-      help: "Counts the most frequest movies shows type searched",
+      help: "Counts the most frequent movies shows type searched",
       labelNames: ["type"]
     }),
     makeCounterProvider({

@@ -24,6 +24,10 @@ Project Context:
 
                 }
         services:
+            API Gateway:
+                Processus Defining:
+                    ☐ Auth
+                    ✔ Shows @done(23-01-14 22:46)
             front end application:
                 using react as a front end technologie and redux for state management
                 ☐ authentification page
@@ -73,7 +77,7 @@ Project Context:
             ✔ Automated infrastructure provisioning @done(22-12-22 23:11)
             ✔ Automated initialization for workloads @done(22-12-22 23:11)
             ☐ Multi-environment setup (Or at least the project should be capable of supporting extra environments)
-            ✔ Well isolated and maintainable infrastructure layers (Microstacks) @done(22-12-23 16:28)
+            ☐ Well isolated and maintainable infrastructure layers (Microstacks) 
             CI/CD:
                 ✔ Test/eslint @done(22-12-24 22:51)
                 ✔ Package @done(22-12-24 22:51)
