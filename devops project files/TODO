@@ -27,7 +27,7 @@ Project Context:
             API Gateway:
                 Processus Defining:
                     ☐ Auth
-                    ✔ Shows @done(23-01-14 22:46)
+                    ✔ Shows @done(23-01-14 22:46) 
             front end application:
                 using react as a front end technologie and redux for state management
                 ☐ authentification page
