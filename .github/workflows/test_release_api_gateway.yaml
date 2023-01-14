@@ -1,4 +1,4 @@
-name: Test then deploy backend Workflow
+name: Test then deploy api gateway Workflow
 on:
   push:
     paths:
