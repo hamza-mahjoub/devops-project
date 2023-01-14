@@ -1,0 +1,15 @@
+apiVersion: v1
+name: tv-show-gateway-service
+description: the api gateway tv shows/ movies discovery app
+type: application
+keywords:
+  - api gateway
+  - tv shows
+  - movies
+sources:
+  - https://github.com/hamza-mahjoub/devops-project
+maintainers: # (optional)
+  - name: hamza majoub
+    email: hamza.mahjoub@insat.ucar.tn
+    url: https://github.com/hamza-mahjoub
+version: 1.0.0

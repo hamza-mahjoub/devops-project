@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  labels:
+    app: {{ .Values.deployment.label }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.label }}
+    spec:
+      containers:
+      - name: {{ .Values.image.name }}
+        image: hamzamahjoub/tvshowappfront:{{ .Values.image.tag }}
+        ports:
+        - containerPort: {{ .Values.http.port }}
+          name: {{ .Values.http.name }}
+        env:
+        - name: APP_BACKEND_HOST
+          value: "{{ .Values.env.backendHost }}"
+        - name: APP_BACKEND_PORT
+          value: "{{ .Values.env.backendPort }}"
+        livenessProbe:
+          tcpSocket:
+            port: {{ .Values.http.port }}
+          failureThreshold: 2
+          periodSeconds: 10
+        startupProbe:
+          tcpSocket:
+            port: {{ .Values.http.port }}
+          failureThreshold: 10
+          periodSeconds: 5
+

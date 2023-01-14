@@ -1,0 +1,18 @@
+deployment:
+  name: api-gateway-deployment
+  namespace: front-office-ns
+  label: api-gateway
+  replicas: 3
+service:
+  name: api-gateway-service
+image:
+  name: api-gateway
+  tag: latest
+http:
+  name: gateway-port
+  port: 3000
+dnsutils:
+  sleepTimeout: 3600
+env:
+  backendHost: tv-show-backend-service.back-office-ns
+  backendPort: 80
