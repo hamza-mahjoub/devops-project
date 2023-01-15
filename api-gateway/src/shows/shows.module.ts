@@ -8,7 +8,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
 
 @Module({
-  imports: [ HttpModule ],
+  imports: [HttpModule],
   controllers: [TvController, MoviesController],
   providers: [
     MoviesService,
@@ -19,11 +19,6 @@ import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
       help: "Counts the requests by visited module",
       labelNames: ["module_name"]
     }),
-    makeCounterProvider({
-      name: "requests_metric",
-      help: "Counts number of processed requests",
-      labelNames: ["requests_count", "http_route"]
-    })
   ]
 })
 export class ShowsModule { }

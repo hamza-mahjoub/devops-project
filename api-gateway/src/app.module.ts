@@ -7,10 +7,12 @@ import { makeCounterProvider, PrometheusModule } from '@willsoto/nestjs-promethe
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { RequestInterceptor } from './interceptors/request.interceptor';
 import { ResponseInterceptor } from './interceptors/response.interceptor';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
     ShowsModule,
+    UsersModule,
     ConfigModule.forRoot({
       isGlobal: true
     }),
