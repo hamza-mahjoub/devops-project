@@ -1,0 +1,13 @@
+deployment:
+  name: auth-service-deployment
+  namespace: back-office-ns
+  label: auth-service
+  replicas: 3
+service:
+  name: auth-service
+image:
+  name: auth-service
+  tag: latest
+http:
+  name: backend-port
+  port: 3002
