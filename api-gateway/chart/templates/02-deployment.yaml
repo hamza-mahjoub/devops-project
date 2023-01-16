@@ -30,6 +30,10 @@ spec:
           value: "{{ .Values.env.backendHost }}"
         - name: APP_BACKEND_PORT
           value: "{{ .Values.env.backendPort }}"
+        - name: APP_AUTH_HOST
+          value: "{{ .Values.env.authHost }}"
+        - name: APP_AUTH_PORT
+          value: "{{ .Values.env.authPort }}"
         livenessProbe:
           tcpSocket:
             port: {{ .Values.http.port }}

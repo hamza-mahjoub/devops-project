@@ -16,3 +16,5 @@ dnsutils:
 env:
   backendHost: tv-show-backend-service.back-office-ns
   backendPort: 80
+  authHost: auth-service.back-office-ns
+  authPort: 80
