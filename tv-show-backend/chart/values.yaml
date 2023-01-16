@@ -2,7 +2,7 @@ deployment:
   name: tv-show-backend-deployment
   namespace: back-office-ns
   label: tv-show-backend
-  replicas: 3
+  replicas: 2
 service:
   name: tv-show-backend-service
 image:
