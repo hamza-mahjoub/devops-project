@@ -41,7 +41,9 @@
 ## About The project
 
 This project reprsents a discovery application for tv shows and movies using the movie database data and it contains principles of deployment,
-automation and observibility.   
+automation and observibility.   It implements the following architecture: 
+
+![devops-architecture drawio](https://user-images.githubusercontent.com/60366675/212712245-b0111495-d331-435a-aed7-f1e4098adb33.png)
 
 It uses the **monorepo** strategy:    
 
