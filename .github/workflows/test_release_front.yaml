@@ -44,14 +44,22 @@ jobs:
           file: Tv-Show-App/dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappfront:latest
-  # deploy:
-  #     name: Deploy
-  #     needs: [ test, package ]
-  #     runs-on: ubuntu-latest
-  #     steps:
-  #       - name: Set the Kubernetes context
-  #         uses: azure/k8s-set-context@v2
-  #         with:
-  #           method: service-account
-  #           k8s-url: https://devops-project-k8s-14b8a194.hcp.westeurope.azmk8s.io:443hamza@hamza-VirtualBox
-  #           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+  Deploy:
+    needs: Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy in VM
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY  }}
+          HOSTNAME: ${{ secrets.VM_HOST }}
+          USER_NAME: ubuntu
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            sudo docker container stop tv-show-app-front
+            sudo docker container rm tv-show-app-front
+            sudo docker image rm ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappfront
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappfront:latest
+            sudo docker run -d -p 3000:3000 --name tv-show-app-front ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappfront
