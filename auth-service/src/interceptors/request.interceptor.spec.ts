@@ -5,7 +5,7 @@ describe('RequestInterceptor', () => {
 
   it('should be defined', () => {
     const counter = new Counter<string>({ name: "counter", help: "a counter" });
-
+ 
     expect(new RequestInterceptor(counter)).toBeDefined();
   });
 });
