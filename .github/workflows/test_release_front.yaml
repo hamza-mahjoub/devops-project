@@ -35,7 +35,7 @@ jobs:
         run: |
           cd Tv-Show-App
           touch .env
-          echo REACT_APP_BACKEND_URL=api-gateway-service.front-office-ns >> .env
+          echo REACT_APP_BACKEND_URL=20.126.200.135 >> .env
           echo REACT_APP_BACKEND_PORT=80 >> .env
       - name: Build and push
         uses: docker/build-push-action@v2

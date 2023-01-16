@@ -39,7 +39,7 @@ function App() {
           />
           <Route
             path="/login"
-            exact={true}
+            exact={true} 
             element={data.token ? <HomePage /> : <LoginPage />}
           />
           <Route path="/" exact={true} element={<HomePage />} />
