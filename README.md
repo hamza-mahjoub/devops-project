@@ -31,8 +31,8 @@
         <li><a href="#deployment">Deployment</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#ci-cd-pipeline">CI/CD pipeline</a></li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -225,13 +225,6 @@ going to give the depending apps the time to migrate to the new version.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-## Usage   
-Navigate to where the front-end app is served.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 <!-- Tests EXAMPLES -->
 ## Tests
 - you can run all the tests of a project at once using 
@@ -316,6 +309,21 @@ It follows these steps:
 4- Launch a new container via `docker run` commande with port and name of the container specification.  
 
 <p align="right">(<a href="#top">back to top</a>)</p>  
+
+
+<!-- USAGE EXAMPLES -->
+## Usage   
+Run argoCd and add all three projects you should have something like this :   
+
+![Capture d’écran 2023-01-16 175117](https://user-images.githubusercontent.com/60366675/212730379-8a2a02d6-1c60-428f-861f-ea77d5c5ee71.jpg)
+
+And if we check the api-gateway service :   
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+![Capture d’écran 2023-01-16 175316](https://user-images.githubusercontent.com/60366675/212730640-ab8be9f9-a754-436c-8122-3a14a11cb41f.jpg)
+
 
 ## Contributing
 
