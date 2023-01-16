@@ -13,7 +13,7 @@ export const axiosPrivate = axios.create({
 });
 
 axiosPrivate.interceptors.request.use(
-  async (req) => {
+  async (req) => { 
     const auth = store?.getState()?.auth;
     console.log(store?.getState()?.auth?.data?.token);
     if (auth?.data?.token) {

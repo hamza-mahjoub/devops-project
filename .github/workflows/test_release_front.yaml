@@ -45,7 +45,7 @@ jobs:
   #         push: true
   #         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/tvshowappfront:latest
   Deploy:
-    needs: Package
+    #needs: Package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
