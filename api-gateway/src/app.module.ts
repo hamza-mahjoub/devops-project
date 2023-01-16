@@ -12,7 +12,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ShowsModule,
-    UsersModule,
+    UsersModule, 
     ConfigModule.forRoot({
       isGlobal: true
     }),

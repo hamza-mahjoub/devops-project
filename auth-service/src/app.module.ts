@@ -14,7 +14,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [AuthModule, UsersModule,
     ConfigModule.forRoot({
-      isGlobal: true,
+      isGlobal: true, 
     }),
     PrometheusModule.register(),
     MongooseModule.forRootAsync({
