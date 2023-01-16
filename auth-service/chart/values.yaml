@@ -11,5 +11,5 @@ image:
 dnsutils:
   sleepTimeout: 3600
 http:
-  name: auth-backend-port
+  name: auth-port
   port: 3002
