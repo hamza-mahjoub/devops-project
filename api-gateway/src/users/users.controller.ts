@@ -22,7 +22,7 @@ export class UserController {
     return await this.usersService.createUser(newUser, { 'X-Request-ID': headers['X-Request-ID'] });
   }
 
-  @Post('/')
+  @Post('/login')
   async login(@Body() data, @Headers() headers) {
     return await this.usersService.login(data, { 'X-Request-ID': headers['X-Request-ID'] });
   }

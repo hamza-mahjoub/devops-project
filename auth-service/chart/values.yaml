@@ -8,6 +8,8 @@ service:
 image:
   name: auth-service
   tag: latest
+dnsutils:
+  sleepTimeout: 3600
 http:
   name: backend-port
   port: 3002

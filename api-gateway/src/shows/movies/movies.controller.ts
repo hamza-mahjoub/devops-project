@@ -1,6 +1,8 @@
-import { Controller, Get, Post, Param, Query, Body } from '@nestjs/common';
+import { Controller, Get, Post, Param, Query, Body, UseInterceptors } from '@nestjs/common';
+import { AuthInterceptor } from 'src/interceptors/auth.interceptor';
 import { MoviesService } from './movies.service';
 
+@UseInterceptors(AuthInterceptor)
 @Controller('shows/movies')
 export class MoviesController {
     constructor(private readonly moviesService: MoviesService) { }

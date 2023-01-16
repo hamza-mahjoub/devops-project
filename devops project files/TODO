@@ -7,42 +7,55 @@ Project Context:
     Define the different components of the project:
         database:
             My db database to hold the list of authenticated users and their commands.
-            ☐ setting MongoDb
+            ✔ setting MongoDb @done(23-01-16 02:18)
             creating account and generating keys
             ✔ preparing the TMDB @done(22-12-02 15:53)
             data schema:
-                ☐ user schema
+                ✔ user schema @done(23-01-16 02:18)
                 user {
-
+                    name: string;
+                    firstName: string;
+                    username: string;
+                    email: string;
+                    password: string;
+                    role: string;
+                    fullAddress: {
+                        city: string,
+                        country: string,
+                        postalCode: string,
+                        address: string,
+                    };
+                    phoneNumber: string;
+                    status: string;
                 }
-                ☐ order schema
+                ✘ order schema @cancelled(23-01-16 13:31)
                 order {
 
                 }
-                ☐ Movie schema
+                ✘ Movie schema @cancelled(23-01-16 13:31)
                 movie {
 
                 }
         services:
             API Gateway:
                 Processus Defining:
-                    ☐ Auth
+                    ✔ Auth @done(23-01-16 02:16)
                     ✔ Shows @done(23-01-14 22:46) 
             front end application:
                 using react as a front end technologie and redux for state management
-                ☐ authentification page
+                ✔ authentification page @done(23-01-16 13:31)
                 ✔ content page @done(22-12-18 23:20)
-                ☐ order page
+                ✘ order page @cancelled(23-01-16 13:31)
             authentification service:
                 using express as a backend technologie
-                ☐ route for authorization and token generation
-                ☐ token refresh
-                ☐ check user
+                ✔ route for authorization and token generation @done(23-01-16 02:16)
+                ✘ token refresh @cancelled(23-01-16 02:16)
+                ✔ check user @done(23-01-16 02:16)
             Back end application:
                 using nestjs as a backend technologie
                 ✔ routes for data fetching @done(22-12-18 23:20)
                 ✔ route for a query search @done(22-12-18 23:21)
-                ☐ making order
+                ✘ making order @cancelled(23-01-16 13:31)
     Project Tasks List: 
         Devops:
             Prometheus for metrics with grafana board:
@@ -58,10 +71,10 @@ Project Context:
             Adding logs:
                 ✔ request_id (take from X-Request-ID or generate) @done(22-12-20 17:14)
                 ✔ client_ip @done(22-12-20 17:14)
-                ☐ maybe use a tool (datadog , loki ..)
+                ✔ maybe use a tool (datadog , loki ..) @done(23-01-16 02:50)
             trace:
-                ☐ generate tracing
-                ☐ trace should have request id and client_ip
+                ✔ generate tracing @done(23-01-16 14:17)
+                ✔ trace should have request id and client_ip @done(23-01-16 14:17)
                 ✔ ArgoCd @done(22-12-26 18:46) @critical
             helm:
                 ✔ service helm chart @done(22-12-21 13:00)
@@ -72,35 +85,36 @@ Project Context:
                     ✔ deployment.replicas @done(22-12-21 12:57)
                     ✔ possibility to add arbitrary `labels` to the deployment @done(22-12-21 13:00)
                 open telemetry:
-                    ☐ define the correct env variables so that open telemetry tracing work as expected
+                    ✔ define the correct env variables so that open telemetry tracing work as expected @done(23-01-16 14:17)
         Automation:
             ✔ Automated infrastructure provisioning @done(22-12-22 23:11)
             ✔ Automated initialization for workloads @done(22-12-22 23:11)
-            ☐ Multi-environment setup (Or at least the project should be capable of supporting extra environments)
-            ☐ Well isolated and maintainable infrastructure layers (Microstacks) 
+            ✔ Multi-environment setup (Or at least the project should be capable of supporting extra environments) @done(23-01-16 02:15)
+            ✔ Well isolated and maintainable infrastructure layers (Microstacks) @done(23-01-16 02:16)
             CI/CD:
                 ✔ Test/eslint @done(22-12-24 22:51)
                 ✔ Package @done(22-12-24 22:51)
-                ☐ Automated Deployment
+                ☐ Automated Deployment @critical
         Deployment:
             -Usage of Microservices:
                 ✔ Use all good practices of tracking workloads health @done(22-12-26 01:32)
                 ✔ restoring them when needed @done(22-12-26 12:46)
             -Adequate choice of deployment strategy (+ explanation):
-                ☐ deployment strategy
-                ☐ explanation
+                ✔ deployment strategy @done(23-01-16 02:50)
+                canary
+                ✔ explanation @done(23-01-16 02:50)
+                
                 ☐ Note: Recreate and Rolling updates are not accepted
             ✔ Use of required configurations and secrets (treat those secrets carefully) @done(22-12-24 22:51)
-            ☐ Use an adequate network architecture and a well-defined set of network policies (ingress)
+            ✔ Use an adequate network architecture and a well-defined set of network policies (ingress) @done(23-01-16 02:50)
             ✔ Have at least one endpoint exposed to the public (loadbalancer) @done(22-12-23 16:28)
     Stuff done but not planned:
         ✔ different namespace @done(22-12-23 11:37)
     what can be added: 
-        ☐ Ingress /auth => auth and /show => backend watch video 2
+        ✔ Ingress /auth => auth and /show => backend watch video 2 @done(23-01-16 14:17)
     Architecture:
-        ☐ add services icons/description
-        ☐ add prometheus/argocd/grafana descritptions
-        ☐ add zipkin
-        ☐ update namespaces
-        ☐ update public ip address
-        ☐ update CI/CD
+        ✔ add services icons/description @done(23-01-16 14:17)
+        ✔ add prometheus/argocd/signoz descritptions @done(23-01-16 14:17)
+        ✔ update namespaces @done(23-01-16 14:17)
+        ✔ update public ip address @done(23-01-16 14:17)
+        ✔ update CI/CD @done(23-01-16 14:17)

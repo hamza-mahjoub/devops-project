@@ -1,7 +1,7 @@
 apiVersion: v1
 name: shows-auth-service
 description: the api for managing authentification
-type: service
+type: application
 keywords:
   - authentification
   - tv shows

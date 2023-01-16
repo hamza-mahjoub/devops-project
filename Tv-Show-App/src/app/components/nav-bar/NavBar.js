@@ -13,16 +13,23 @@ import ScreenshotMonitorIcon from "@mui/icons-material/ScreenshotMonitor";
 
 import { Link } from "react-router-dom";
 import { pages } from "../../constants/Routes";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../slices/auth.slice";
 
 export function NavBar() {
+  const { data } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleLogOut = () => {
+    setAnchorElNav(null);
+    dispatch(logout());
   };
 
   return (
@@ -79,13 +86,26 @@ export function NavBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Link to={page.path}>
-                    <Typography textAlign="center">{page.title}</Typography>
+              {data.token ? (
+                <>
+                  {pages.map((page) => (
+                    <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                      <Link to={page.path}>
+                        <Typography textAlign="center">{page.title}</Typography>
+                      </Link>
+                    </MenuItem>
+                  ))}
+                  <MenuItem key={"logout"} onClick={handleLogOut}>
+                    <Typography textAlign="center">logout</Typography>
+                  </MenuItem>
+                </>
+              ) : (
+                <MenuItem key={"login"} onClick={handleCloseNavMenu}>
+                  <Link to={"login"}>
+                    <Typography textAlign="center">login</Typography>
                   </Link>
                 </MenuItem>
-              ))}
+              )}
             </Menu>
           </Box>
           <ScreenshotMonitorIcon
@@ -110,16 +130,38 @@ export function NavBar() {
             TV SHOW APP
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Link to={page.path} key={page.title}>
+            {data.token ? (
+              <>
+                {pages.map((page) => (
+                  <Link to={page.path} key={page.title}>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{ my: 2, color: "white", display: "block" }}
+                    >
+                      {page.title}
+                    </Button>
+                  </Link>
+                ))}
+
                 <Button
-                  onClick={handleCloseNavMenu}
+                  onClick={handleLogOut}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page.title}
+                  logout
                 </Button>
-              </Link>
-            ))}
+              </>
+            ) : (
+              <>
+                <Link to={"login"} key={"login"}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    login
+                  </Button>
+                </Link>
+              </>
+            )}
           </Box>
         </Toolbar>
       </Container>

@@ -1,13 +1,15 @@
 deployment:
-  name: shows-backend-deployment
+  name: tv-show-backend-deployment
   namespace: back-office-ns
-  label: shows-backend
+  label: tv-show-backend
   replicas: 3
 service:
-  name: shows-backend-service
+  name: tv-show-backend-service
 image:
-  name: shows-backend
+  name: tv-show-backend
   tag: latest
+dnsutils:
+  sleepTimeout: 3600
 http:
   name: backend-port
   port: 3001

@@ -13,7 +13,7 @@ export const tvAPI = {
   FIND_BY_ID: (tvId) => `/shows/tv/${tvId}`,
   FETCH_EPISODES_BY_SEASON: (tvId, seasonNumber) =>
     `/shows/tv/${tvId}/season/${seasonNumber}`,
-}; 
+};
 
 export const movieAPI = {
   FIND_ALL_BY_TYPE: "/shows/movies",
@@ -23,5 +23,6 @@ export const movieAPI = {
 };
 
 export const authAPI = {
-  CHECK_SERVER: "/auth",
+  LOGIN:"/auth/login",
+  ME: "/auth/me"
 };

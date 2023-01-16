@@ -1,13 +1,15 @@
-import { Controller, Get, Param, Post, Query, Body, Logger, Req } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query, Body, Logger, Req, UseInterceptors } from '@nestjs/common';
+import { AuthInterceptor } from 'src/interceptors/auth.interceptor';
 import { TvService } from './tv.service';
 
+@UseInterceptors(AuthInterceptor)
 @Controller('shows/tv')
 export class TvController {
 
     constructor(private readonly tvService: TvService) { }
 
     @Get('/')
-    async findAllByType(@Query('type') showType, @Query('page') pageNumber, @Req()req) {
+    async findAllByType(@Query('type') showType, @Query('page') pageNumber, @Req() req) {
         return await this.tvService.findAll(showType, pageNumber);
     }
 

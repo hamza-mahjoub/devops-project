@@ -1,11 +1,17 @@
-import { axiosPublic } from "../api/axiosConfig";
+import { axiosPrivate, axiosPublic } from "../api/axiosConfig";
 import { authAPI } from "../api/constants";
 
-const checkServer = async (movieId) => {
-  const response = await axiosPublic.get(authAPI.CHECK_SERVER);
+const login = async (data) => {
+  const response = await axiosPublic.post(authAPI.LOGIN, data);
+  return response.data;
+};
+
+const profile = async (data) => {
+  const response = await axiosPrivate.get(authAPI.ME);
   return response.data;
 };
 
 export const authServices = {
-  checkServer,
+  login,
+  profile,
 };
