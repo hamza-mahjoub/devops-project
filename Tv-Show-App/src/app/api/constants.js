@@ -13,7 +13,7 @@ export const tvAPI = {
   FIND_BY_ID: (tvId) => `/shows/tv/${tvId}`,
   FETCH_EPISODES_BY_SEASON: (tvId, seasonNumber) =>
     `/shows/tv/${tvId}/season/${seasonNumber}`,
-};
+}; 
 
 export const movieAPI = {
   FIND_ALL_BY_TYPE: "/shows/movies",
