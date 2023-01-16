@@ -50,3 +50,10 @@ resource "helm_release" "signoz" {
   chart      = "signoz"
   namespace  = kubernetes_namespace.gitops_namespace.id
 }
+
+resource "helm_release" "node_exporter" {
+  name       = "node-exporter"
+  repository = " https://prometheus-community.github.io/helm-charts"
+  chart      = "prometheus-node-exporter"
+  namespace  = kubernetes_namespace.gitops_namespace.id
+}
