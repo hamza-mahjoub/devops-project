@@ -101,10 +101,12 @@ Project Context:
                 ✔ restoring them when needed @done(22-12-26 12:46)
             -Adequate choice of deployment strategy (+ explanation):
                 ✔ deployment strategy @done(23-01-16 02:50)
-                canary
+                A/B testing
                 ✔ explanation @done(23-01-16 02:50)
-                
-                ☐ Note: Recreate and Rolling updates are not accepted
+                The concept is to provide an open source api, so when breaking changes happen, 
+                i would like to provide the new api version and let the old one working for the sake
+                of the apps depending on this api.
+                ✔ Note: Recreate and Rolling updates are not accepted @done(23-01-16 16:13)
             ✔ Use of required configurations and secrets (treat those secrets carefully) @done(22-12-24 22:51)
             ✔ Use an adequate network architecture and a well-defined set of network policies (ingress) @done(23-01-16 02:50)
             ✔ Have at least one endpoint exposed to the public (loadbalancer) @done(22-12-23 16:28)
